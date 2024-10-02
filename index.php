@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
@@ -15,8 +16,33 @@
     <title>Serenatto - Cardápio</title>
 </head>
 
-<?php 
-
+<?php
+$produtosCafe = [
+    [
+        'nome' => 'Café Cremoso',
+        'descricao' => 'Café cremoso irresistivelmente suave e que envolve seu paladar',
+        'preco' => '5.00',
+        'imagem' => 'img/cafe-cremoso.jpg'
+    ],
+    [
+        'nome' => 'Café com Leite',
+        'descricao' => 'A harmonia perfeita do café e do leite, uma experiência reconfortante',
+        'preco' => '2.00',
+        'imagem' => 'img/cafe-com-leite.jpg'
+    ],
+    [
+        'nome' => 'Cappuccino',
+        'descricao' => 'Café suave, leite cremoso e uma pitada de sabor adocicado',
+        'preco' => '7.00',
+        'imagem' => 'img/cappuccino.jpg'
+    ],
+    [
+        'nome' => 'Café Gelado',
+        'descricao' => 'Café gelado refrescante, adoçado e com notas sutis de baunilha ou caramelo.',
+        'preco' => '3.00',
+        'imagem' => 'img/cafe-gelado.jpg'
+    ]
+]
 ?>
 
 <body>
@@ -30,7 +56,7 @@
         <section class="container-cafe-manha">
             <div class="container-cafe-manha-titulo">
                 <h3>Opções para o Café</h3>
-                <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-cafe-manha-produtos">
                 <div class="container-produto">
@@ -40,13 +66,13 @@
                     <p>Café Cremoso</p>
                     <p>Café cremoso irresistivelmente suave e que envolve seu paladar</p>
                     <p>R$ 5.00</p>
-                </div>   
+                </div>
             </div>
         </section>
         <section class="container-almoco">
             <div class="container-almoco-titulo">
                 <h3>Opções para o Almoço</h3>
-                <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-almoco-produtos">
                 <div class="container-produto">
@@ -86,4 +112,5 @@
         </section>
     </main>
 </body>
+
 </html>
