@@ -1,22 +1,5 @@
-<!doctype html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="img/icone-serenatto.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Serenatto - Cardápio</title>
-</head>
-
 <?php
+// var_dump(date("H:i:s"));
 $produtosCafe = [
     [
         'nome' => 'Café Cremoso',
@@ -38,12 +21,59 @@ $produtosCafe = [
     ],
     [
         'nome' => 'Café Gelado',
-        'descricao' => 'Café gelado refrescante, adoçado e com notas sutis de baunilha ou caramelo.',
+        'descricao' => 'Café gelado refrescante, adoçado e com notas sutis de baunilha ou caramelo',
         'preco' => '3.00',
         'imagem' => 'img/cafe-gelado.jpg'
     ]
+];
+
+$produtosAlmoco = [
+    [
+        "nome" => "Bife",
+        "descricao" => "Bife, arroz com feijão e uma deliciosa batata frita",
+        "preco" => "27.90",
+        "imagem" => "img/bife.jpg"
+    ],
+    [
+        "nome" => "Filé de peixe",
+        "descricao" => "Filé de peixe salmão assado, arroz, feijão verde e tomate",
+        "preco" => "24.99",
+        "imagem" => "img/prato-peixe.jpg"
+    ],
+    [
+        "nome" => "Frango",
+        "descricao" => "Saboroso frango à milanesa com batatas fritas, salada de repolho e molho picante",
+        "preco" => "23.00",
+        "imagem" => "img/prato-frango.jpg"
+    ],
+    [
+        "nome" => "Fettuccine",
+        "descricao" => "Prato italiano autêntico da massa do fettuccine com peito de frango grelhado",
+        "preco" => "22.50",
+        "imagem" => "img/fettuccine.jpg"
+    ],
 ]
+
 ?>
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/icone-serenatto.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Serenatto - Cardápio</title>
+</head>
+
 
 <body>
     <main>
@@ -59,14 +89,16 @@ $produtosCafe = [
                 <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-cafe-manha-produtos">
-                <div class="container-produto">
-                    <div class="container-foto">
-                        <img src="img/cafe-cremoso.jpg">
+                <?php foreach ($produtosCafe as $cafe): ?>
+                    <div class="container-produto">
+                        <div class="container-foto">
+                            <img src="<?php echo $cafe['imagem']; ?>" alt="<?php echo $cafe['nome']; ?>">
+                        </div>
+                        <p><?php echo $cafe['nome'] ?></p>
+                        <p><?php echo $cafe['descricao'] ?></p>
+                        <p>R$ <?php echo $cafe['preco'] ?></p>
                     </div>
-                    <p>Café Cremoso</p>
-                    <p>Café cremoso irresistivelmente suave e que envolve seu paladar</p>
-                    <p>R$ 5.00</p>
-                </div>
+                <?php endforeach ?>
             </div>
         </section>
         <section class="container-almoco">
@@ -75,38 +107,19 @@ $produtosCafe = [
                 <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-almoco-produtos">
+                <?php foreach($produtosAlmoco as $almoco):  ?>
                 <div class="container-produto">
                     <div class="container-foto">
-                        <img src="img/bife.jpg">
+                        <img src="<?php echo $almoco['imagem'] ?>" alt="<?php echo $almoco['nome'] ?>">
                     </div>
-                    <p>Bife</p>
-                    <p>Bife, arroz com feijão e uma deliciosa batata frita</p>
-                    <p>R$ 27.90</p>
+                    <p><?php echo $almoco['nome'] ?></p>
+                    <p><?php echo $almoco['descricao'] ?></p>
+                    <p>R$ <?php echo $almoco['preco'] ?></p>
                 </div>
-                <div class="container-produto">
-                    <div class="container-foto">
-                        <img src="img/prato-peixe.jpg">
-                    </div>
-                    <p>Filé de peixe</p>
-                    <p>Filé de peixe salmão assado, arroz, feijão verde e tomate.</p>
-                    <p>R$ 24.99</p>
-                </div>
-                <div class="container-produto">
-                    <div class="container-foto">
-                        <img src="img/prato-frango.jpg">
-                    </div>
-                    <p>Frango</p>
-                    <p>Saboroso frango à milanesa com batatas fritas, salada de repolho e molho picante</p>
-                    <p>R$ 23.00</p>
-                </div>
-                <div class="container-produto">
-                    <div class="container-foto">
-                        <img src="img/fettuccine.jpg">
-                    </div>
-                    <p>Fettuccine</p>
-                    <p>Prato italiano autêntico da massa do fettuccine com peito de frango grelhado</p>
-                    <p>R$ 22.50</p>
-                </div>
+                
+                <?php endforeach; ?>
+                
+                
             </div>
 
         </section>
